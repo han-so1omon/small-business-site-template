@@ -1,17 +1,21 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Small Business Site App Template
 
-## Getting Started
+This is a template that can be used for small businesses to deploy a site very quickly.
+This template is best serviced by small businesses who want to work with someone to manage their
+website presence, but do not want to use a WYSIWYG site-builder
 
-First, run the development server:
+*NOTE: THIS REPOSITORY IS UNDER ACTIVE DEVELOPMENT. CONTRIBUTIONS ARE WELCOME*
+
+## Usage
+
+### Development
 
 ```bash
+# install dependencies
+npm i
+
+# run dev server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
@@ -20,17 +24,29 @@ You can start editing the page by modifying `app/page.tsx`. The page auto-update
 
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-## Learn More
+### Site management
 
-To learn more about Next.js, take a look at the following resources:
+[Deploying git repositories from Vercel](https://vercel.com/docs/deployments/git)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Deployment
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```bash
+# Commit git changes
+git add -A
+git commit -m "This is my commit message"
+git push -u origin main
+```
 
-## Deploy on Vercel
+After push, the site should be triggered to deploy via Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Further resources
+
+- [Vercel docs](https://vercel.com/docs)
+- [NextJS docs](https://nextjs.org/docs)
+
+## TODO
+
+- Content Managment System
+- Styling
+- Email for arbitrary addresses
