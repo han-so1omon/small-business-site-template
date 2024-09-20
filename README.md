@@ -40,6 +40,13 @@ git push -u origin main
 After push, the site should be triggered to deploy via Vercel
 
 
+## Environment variables
+
+- Rename .env.template to .env.local
+- Generate a Sendgrid API key with at least "Send Mail" permissions
+- Add your Sendgrid API key to .env.local
+- In Vercel (or wherever), add the same environment variables as environment secrets. *NOTE: all secrets should always only be available server-side*
+
 ## Further resources
 
 - [Vercel docs](https://vercel.com/docs)
