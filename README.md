@@ -47,6 +47,63 @@ After push, the site should be triggered to deploy via Vercel
 - Add your Sendgrid API key to .env.local
 - In Vercel (or wherever), add the same environment variables as environment secrets. *NOTE: all secrets should always only be available server-side*
 
+
+## Styling
+
+Some info on styling options
+
+### Fonts
+
+See the comments at the top of app/layout.tsx on how to change the fonts
+```jsx
+// Using local font
+import localFont from "next/font/local";
+
+const fontSans = localFont({
+  src: "./fonts/GeistVF.woff",
+  variable: "--font-geist-sans",
+  weight: "100 900",
+});
+const fontMono = localFont({
+  src: "./fonts/GeistMonoVF.woff",
+  variable: "--font-geist-mono",
+  weight: "100 900",
+});
+const fonts = [fontSans, fontMono];
+
+// ...
+
+// Or using font from google
+import { Inter } from 'next/font/google';
+
+const font = Inter({
+  weight: '400',
+  subsets: ['latin'],
+  display: 'swap',
+})
+const fonts = [font];
+
+// ...
+
+// Return root <body> with fonts loaded
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
+  return (
+    <html lang="en">
+      <body
+        //className={`${fonts.map(font => font.variable).join(' ')} antialiased`} // For local fonts
+        className={`${fonts.map(font => font.className).join(' ')} antialiased`} // For fonts from google
+      >
+        {children}
+      </body>
+    </html>
+  );
+}
+```
+
 ## Further resources
 
 - [Vercel docs](https://vercel.com/docs)
